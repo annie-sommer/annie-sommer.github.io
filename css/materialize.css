@@ -2,19 +2,8 @@
  * Materialize v0.97.1 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
- */
- 
-/*!global focus visible*/
-  * {
-focus*{background-color: yellow !Important;
-color:#333333 !Important;
-outline: thin solid #333333 !Important;
-}
+*/
 
-:focus *{
-color:#333333 !Important;
-}
-/*end global focus visible*/
 .materialize-red.lighten-5 {
     background-color: #fdeaeb !important;
 }
