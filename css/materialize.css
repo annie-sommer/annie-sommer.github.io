@@ -3,6 +3,17 @@
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
  */
+ 
+ 
+  *:focus{
+background-color: yellow !Important;
+color:#333333 !Important;
+outline: thin solid #333333 !Important;
+}
+
+*:focus *{
+color:#333333 !Important;
+}
 
 .materialize-red.lighten-5 {
     background-color: #fdeaeb !important;
