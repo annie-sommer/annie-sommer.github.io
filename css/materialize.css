@@ -5,13 +5,13 @@
  */
  
 /*!global focus visible*/
-  *:focus{
-background-color: yellow !Important;
+  * {
+focus*{background-color: yellow !Important;
 color:#333333 !Important;
 outline: thin solid #333333 !Important;
 }
 
-*:focus *{
+:focus *{
 color:#333333 !Important;
 }
 /*end global focus visible*/
