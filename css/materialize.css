@@ -8,7 +8,7 @@
     background-color: #fdeaeb !important;
 }
 .materialize-red-text.text-lighten-5 {
-    color: #fdeaeb !important;
+    color: #fdeaEeb !important;
 }
 .materialize-red.lighten-4 {
     background-color: #f8c1c3 !important;
@@ -1757,7 +1757,7 @@ a {
  */
 
 a:active,
-a:hover {
+/*a:hover {
     outline: 0;
 }
 /* Text-level semantics
@@ -6830,7 +6830,7 @@ select:focus {
     outline: 1px solid #c9f3ef;
 }
 button:focus {
-    outline: none;
+    outline: 4px;
     background-color: #2ab7a9;
 }
 label {
