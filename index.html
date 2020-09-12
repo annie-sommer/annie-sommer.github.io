@@ -12,42 +12,6 @@
 	<!-- Isotope CDN -->
 
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script>
-/*mobile voting */
-$(document).ready(function(){
-        $(".btn").click(function(){
-        $(".container-main").slideDown("veryslow");
-    });
-    $(".btn").click(function(){
-        $(".case").load("/mobilevoting.txt");
-    });   
-});
-/*usa digital */
-$(document).ready(function(){
-    $(".btn1").click(function(){
-        $(".case").load("/usadigital.txt");
-    });   
-});
-/*MI Waters */
-$(document).ready(function(){
-    $(".miw").click(function(){
-        $(".case").load("/miwaters.txt");
-    });   
-});
-/*USA*/
-$(document).ready(function(){
-    $(".usa").click(function(){
-        $(".case").load("/usa.txt");
-    });   
-});
-/*Making Space*/
-$(document).ready(function(){
-    $(".ms").click(function(){
-        $(".case").load("/makingspace.txt");
-    });   
-});
-</script>
 <body>
 	<!-- \Image Background Test\ -->
 <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
@@ -61,84 +25,6 @@ $(document).ready(function(){
 <div class="row portfolio-body">
 
 <div class="case">
-<div class="next">
-<ul class="list-inline">
-<li><a href="mv.html" title="previous project">Back</a></li>
-<li><a class="miw.html" title="next project">Next</a></li>
-</div>
-<h2>UX for Unions </h2>
-<h4>Redesigning union websites at USA Digital Media Agency</h4>
-<p> Skills Utilized: front-end development, interaction design, content strategy</p>
-<p> My role: developed websites using adobe business catalyst, Foundation and Bootstrap frameworks, and Business Catalyst templates. 
-Brought paper form processes and recruiting tools online. 
-</p>
-
-<h5> Problem: </h5>
-<p>
-Most construction trade associations have websites that are 10+ years old, or they don't have them at all. It was my job to build new websites for our clients, as well as
-work with them to bring some of their outdated systems online. It was a young agency that was growing quickly, that didn't have any formalize UX procedures or roles beyond a single web developer. 
-</p>
-
-<h5> Method: </h5>
-<p>
-I strove to build the agencies approach to designing websites as user and client-centered. I sat in on meetings with clients that had previously been only attended by my director, in order to find out what our clients unique 
-needs were. I discussed website pain points and low-tech processes in these conversations with clients. I then incorporated solutions to these issues in the new design, leveraging
-HTML5, CSS3, Javascript, and JQuery to house application-inquiries, hours-reporting, and other tasks within applications on their new sites. 
-</p>
-<p> 
-<h5> Results:</h5>
-<p>
-Our clients have seen an increase in page visits, recruitment, and workflow efficiency.  The agency itself has doubled it's client-base since last year.
-We now have a database of procedures, resources, and formalized processes for our growing team to leverage. 
-</p>
-  
-</div>
-
-</div>
-</div>
-	<!-- Sidebar -->
-<div class="medium-3 large-3 medium-pull-8 large-pull-9 columns sidebar">
-<header class="header">
-  <h1 class="main-header">UX</h1>
-  <div class="subtitle">
-  <p> By Annie Sommer</p>
-  </header>
-    <p class="about">
-  Multidisciplinary UX specialist. Most of my experience is in user testing, project management, and web accessibility. Currently looking for full-time/consulting work in any an all things user centered design.
-    </p>
-		</div>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
-
-<script>
-      $(document).foundation();
-    </script>
-    
- <script>
- $(function(){
-  var $container = $('#Portfolio');
-
-  $container.isotope({
-    itemSelector: '.portfolio-item',
-    layoutMode: 'fitRows',
-  });
-
-  $('#filters').on( 'click', 'a', function() {
-    var filterValue = $(this).attr('data-filter');
-    $('#filters a').removeClass('active');
-    $(this).addClass('active');
-    $container.isotope({ filter: filterValue });
-  });
-});
-
-</script>
-
-
-
-
-
-
 
 </body>
 </html>
