@@ -24,8 +24,8 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #534B4C;
-  --secondary: #BFCDE0;
+  --primary: #bd5d38;
+  --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
@@ -66,7 +66,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #F3FFBD;
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -159,12 +159,12 @@ sup {
 }
 
 a {
-  color: #BC8034;
+  color: #bd5d38;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #DCB47F;
+  color: #824027;
   text-decoration: underline;
 }
 
