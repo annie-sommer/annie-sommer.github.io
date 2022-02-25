@@ -21,6 +21,22 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link active" aria-current="page" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project1.html">Project 1</a>
+          </li>
+        	<li class="nav-item">
+            <a class="nav-link" href="/project2.html">Project 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/project3.html">Project 3</a>
+          </li>
+        	<li class="nav-item">
+            <a class="nav-link" href="/project4.html">Project 4</a>
+          </li>
+        	<li class="nav-item">
+            <a class="nav-link" href="/project4.html">Project 5</a>
+          </li>
         </ul>
       </div>
 </div>
@@ -33,7 +49,7 @@
 <div class="row">
 <div styles="padding-bottom:40px;">
     <div class="col">
-    <h1>Annie Sommer UX Portfolio - Under Construction :) </h1>
+    <h1>Hi, I’m Annie Sommer</h1>
     </div>
 </div>
 <div class="row">
@@ -83,6 +99,26 @@ Product design, UX research, UX/UI design, VUI design, enterprise software desig
 </p>
 <p>This site, created using Github and Bootstrap, is the extent of my coding ability :)
     </p>
+    <p> Projects </p>
+    <ol>
+    	<li><a href="/project1.html">Credit Card App</a>
+        </li>
+        <li><a href="/project1.html">Ford Computer Vision PII Removal</a>
+        </li>
+        <li><a href="/project1.html"> Ford Internal Data Portal</a>
+        </li>
+        <li>
+            <a href="/project3.html">CVS iOS Accessibility</a>
+        </li>
+        <li>
+           <a href="/project4.html"> Shark Ninja Robot Vacum</a>
+        </li>
+        <li>
+        	<a href="/project5.html">Computer Vision PII Removal</a>
+        </li>
+    </ol>      
+    <p>Bonus Project :) <a href="/project2.html">Ford Google Cloud Hackathon</a></p>
+        </li>
 	<p><a href="/AS_portfolio.pdf" download>Download Portfolio PDF</a><br>
 	<a href="/RESUME_2022.pdf" download>Download Resume PDF</a></p>
 </div>
