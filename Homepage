@@ -55,8 +55,11 @@
     <h1>Hi, I’m Annie Sommer</h1>
     </div>
 </div>
+
+
+
 <div class="row">
-    <div class="col-2">
+    <div class="col-10 col-sm-8 col-lg-6">
     <div class="text-center">
     <img src="profile1.png" style="border-radius: 50%" alt="picture of Annie, a blonde smiling woman">
    	</div>
