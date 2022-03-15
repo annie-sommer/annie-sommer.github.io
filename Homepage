@@ -59,12 +59,12 @@
 
 
 <div class="row">
-    <div class="col-10 col-sm-8 col-lg-6">
+    <div class="col-4 col-sm-12 col-lg-4">
     <div class="text-center">
     <img src="profile1.png" style="border-radius: 50%" alt="picture of Annie, a blonde smiling woman">
    	</div>
     </div>
-	<div class="col-7">
+	<div class="col-lg-4 col-sm-12">
 			<p>I’m a product designer. I feel lucky to have started in UX at a time when technology began to touch our lives in so many different ways. Outside of work, I enjoy movies, cooking, and swimming in Lake Michigan. 
 			</p>    
 			<p>Michigan State University 2016 BA in Professional Writing, Usability Certified by Neilsen Norman Group</p>
@@ -94,7 +94,7 @@ Senior UX Lead, Sapient Razorfish
 </li>
 </ul>
     </div>
-<div class="col-3">
+<div class="col-lg-4 col-md-6 col-sm-12">
 <p>
 anniesommer22 at gmail <br>
 248 410 5711
