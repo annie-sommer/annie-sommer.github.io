@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 export default defineConfig({
   site: 'https://annie-sommer.github.io',
+  base: '/annie-sommer',
   outDir: 'dist'
 });
 import mdx from '@astrojs/mdx'
