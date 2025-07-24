@@ -3,20 +3,20 @@
   "type": "module",
   "version": "0.5.0",
   "license": "MIT",
-  "scripts": {
-    "dev": "astro dev",
-    "prebuild": "pnpm exec tsx scripts/toggle-proxy.ts",
-    "build": "pnpm run prebuild && astro build",
-    "preview": "astro preview",
-    "deploy": "gh-pages -d dist"
-    "astro": "astro",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "new": "tsx scripts/new-post.ts",
-    "update-theme": "tsx scripts/update-theme.ts"
-  },
+ "scripts": {
+  "dev": "astro dev",
+  "prebuild": "npx tsx scripts/toggle-proxy.ts",
+  "build": "npm run prebuild && astro build",
+  "preview": "astro preview",
+  "deploy": "npx gh-pages -d dist",
+  "astro": "astro",
+  "lint": "npx eslint .",
+  "lint:fix": "npx eslint . --fix",
+  "format": "npx prettier --write .",
+  "format:check": "npx prettier --check .",
+  "new": "npx tsx scripts/new-post.ts",
+  "update-theme": "npx tsx scripts/update-theme.ts"
+}
   "dependencies": {
     "@astrojs/mdx": "^4.3.1",
     "@astrojs/netlify": "^6.5.1",

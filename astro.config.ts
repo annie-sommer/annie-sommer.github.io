@@ -1,7 +1,10 @@
+import github from '@astrojs/github';
 import { defineConfig } from 'astro/config'
 export default defineConfig({
   site: 'https://annie-sommer.github.io',
   base: '/',
+  output: 'static',
+  adapter: github(),
 });
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
