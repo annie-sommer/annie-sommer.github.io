@@ -5,173 +5,43 @@ astro---
 ---
 ---
 ---
+---
+---
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annie Sommer</title>
+    <title>Annie Sommer - Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --text-color: #34495e;
-            --light-gray: #ecf0f1;
-            --border-color: #bdc3c7;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            max-width: 42rem;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-            margin: 0;
-        }
-        
-        nav {
-            margin-bottom: 3rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 0;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
-        
-        nav a:hover {
-            background-color: var(--light-gray);
-        }
-        
-        .projects {
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .project-card {
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .project-card h3 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        .project-card h3 a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .project-meta {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 1rem;
-        }
-        
-        .project-description {
-            margin-bottom: 1.5rem;
-        }
-        
-        .read-more {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        .read-more:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>Annie Sommer</h1>
-        <p>Designer & Creative Problem Solver</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/case-study-1">Projects</a></li>
-            <li><a href="/case-study-2">About</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section class="projects">
-            <article class="project-card">
-                <h3><a href="/case-study-1">E-commerce Redesign</a></h3>
-                <div class="project-meta">UX/UI Design • 2024</div>
-                <div class="project-description">
-                    <p>A comprehensive redesign of an e-commerce platform focused on improving user experience and conversion rates. Through research and iterative design, we achieved a 40% increase in user engagement.</p>
-                </div>
-                <a href="/case-study-1" class="read-more">Read case study →</a>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/case-study-1">Case Study 1</a></li>
+                <li><a href="/case-study-2">Case Study 2</a></li>
+            </ul>
+        </nav>
+        
+        <hgroup>
+            <h1>Annie Sommer</h1>
+            <p>Welcome to my portfolio! Updated.</p>
+        </hgroup>
+        
+        <section>
+            <h2>My Work</h2>
+            <article>
+                <h3><a href="/case-study-1">My First Case Study</a></h3>
+                <p>Check out my first project...</p>
             </article>
             
-            <article class="project-card">
-                <h3><a href="/case-study-2">Mobile App Interface</a></h3>
-                <div class="project-meta">Product Design • 2024</div>
-                <div class="project-description">
-                    <p>Designing an intuitive mobile interface for a fitness tracking app. The project involved user research, prototyping, and testing to create a seamless experience for health-conscious users.</p>
-                </div>
-                <a href="/case-study-2" class="read-more">Read case study →</a>
+            <article>
+                <h3><a href="/case-study-2">My Second Case Study</a></h3>
+                <p>Check out my second project...</p>
             </article>
         </section>
     </main>
-    
-    <footer>
-        <p>© 2024 Annie Sommer. Thoughtfully designed with care.</p>
-    </footer>
 </body>
 </html>
