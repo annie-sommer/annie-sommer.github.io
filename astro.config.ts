@@ -1,10 +1,9 @@
 import { defineConfig } from 'astro/config'
 export default defineConfig({
-  adapter: github(),
   site: 'https://annie-sommer.github.io',
-  base: '/',
-  // ... rest of config
-})
+  base: '/annie-sommer'
+  outDir: 'dist'
+});
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import playformInline from '@playform/inline'
@@ -20,8 +19,7 @@ import remarkTOC from './src/plugins/remark-toc.mjs'
 import { themeConfig } from './src/config'
 import { imageConfig } from './src/utils/image-config'
 import path from 'path'
-import github from '@astrojs/github
-'
+import github from '@astrojs/github'
 
 export default defineConfig({
   adapter: github(), // Set adapter for deployment, or set `linkCard` to `false` in `src/config.ts`
