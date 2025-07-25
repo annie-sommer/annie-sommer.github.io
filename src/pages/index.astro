@@ -3,144 +3,99 @@ astro---
 ---
 ---
 ---
+---
+---
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annie Sommer - UX/UI Designer</title>
+    <title>Annie Sommer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
             --text-color: #34495e;
-            --light-gray: #f8f9fa;
-            --border-color: #e9ecef;
-            --accent-color: #3498db;
+            --light-gray: #ecf0f1;
+            --border-color: #bdc3c7;
         }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        /* Header Section */
-        .hero {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            letter-spacing: -0.02em;
-        }
-        
-        .hero .tagline {
-            font-size: 1.3rem;
-            color: #7f8c8d;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .hero .description {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
             line-height: 1.6;
+            color: var(--text-color);
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
         
-        /* Navigation */
-        .nav-links {
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin: 0;
+        }
+        
+        nav {
+            margin-bottom: 3rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin: 0;
         }
         
-        .nav-links a {
-            color: #7f8c8d;
+        nav a {
             text-decoration: none;
-            font-size: 0.95rem;
+            color: var(--text-color);
             font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 4px;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
+            transition: background-color 0.2s ease;
         }
         
-        .nav-links a:hover {
-            color: var(--primary-color);
+        nav a:hover {
             background-color: var(--light-gray);
-            border-color: var(--border-color);
         }
         
-        /* Projects Section */
         .projects {
-            margin-bottom: 4rem;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 1px;
-            background-color: var(--border-color);
-            margin: 1rem auto 0;
-        }
-        
-        .project-grid {
             display: grid;
             gap: 2rem;
-            margin-bottom: 2rem;
         }
         
         .project-card {
-            padding: 2.5rem;
+            padding: 2rem;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            background-color: #ffffff;
-            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.1);
-            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .project-card h3 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--primary-color);
+            margin-top: 0;
             margin-bottom: 1rem;
+            color: var(--primary-color);
         }
         
         .project-card h3 a {
@@ -151,187 +106,72 @@ astro---
         .project-meta {
             font-size: 0.9rem;
             color: #7f8c8d;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            margin-bottom: 1rem;
         }
         
         .project-description {
-            color: var(--text-color);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
         
-        .project-link {
-            display: inline-block;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid var(--accent-color);
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-        
-        .project-link:hover {
-            background-color: var(--accent-color);
-            color: white;
-            transform: translateY(-1px);
-        }
-        
-        /* About Section */
-        .about {
-            text-align: center;
-            padding: 3rem 0;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-        }
-        
-        .about h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
+        .read-more {
             color: var(--primary-color);
-            margin-bottom: 2rem;
-        }
-        
-        .about p {
-            max-width: 500px;
-            margin: 0 auto 2rem auto;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-links a {
-            color: #7f8c8d;
             text-decoration: none;
-            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s ease;
+            font-size: 0.9rem;
         }
         
-        .contact-links a:hover {
-            color: var(--accent-color);
+        .read-more:hover {
+            text-decoration: underline;
         }
         
-        /* Footer */
-        .footer {
-            text-align: center;
+        footer {
             margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-color);
+            text-align: center;
             color: #7f8c8d;
             font-size: 0.9rem;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .project-card {
-                padding: 2rem;
-            }
-            
-            .contact-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <h1>Annie Sommer</h1>
-            <p class="tagline">UX/UI Designer & Creative Problem Solver</p>
-            <p class="description">
-                I create intuitive digital experiences that connect people with the products they love. 
-                With a focus on user-centered design and strategic thinking, I help businesses solve 
-                complex problems through thoughtful design solutions.
-            </p>
-        </header>
-        
-        <!-- Navigation -->
-        <nav class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="mailto:hello@anniesommer.com">Contact</a>
-        </nav>
-        
-        <!-- Projects Section -->
-        <section class="projects" id="work">
-            <h2 class="section-title">Selected Work</h2>
+    <header>
+        <h1>Annie Sommer</h1>
+        <p>Designer & Creative Problem Solver</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/case-study-1">Projects</a></li>
+            <li><a href="/case-study-2">About</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="projects">
+            <article class="project-card">
+                <h3><a href="/case-study-1">E-commerce Redesign</a></h3>
+                <div class="project-meta">UX/UI Design • 2024</div>
+                <div class="project-description">
+                    <p>A comprehensive redesign of an e-commerce platform focused on improving user experience and conversion rates. Through research and iterative design, we achieved a 40% increase in user engagement.</p>
+                </div>
+                <a href="/case-study-1" class="read-more">Read case study →</a>
+            </article>
             
-            <div class="project-grid">
-                <article class="project-card">
-                    <h3><a href="/case-study-1">E-commerce Platform Redesign</a></h3>
-                    <div class="project-meta">UX/UI Design • 2024</div>
-                    <div class="project-description">
-                        <p>A comprehensive redesign that increased conversion rates by 40% and reduced cart abandonment by 65%. Focused on streamlining the user journey and building trust through strategic design decisions.</p>
-                    </div>
-                    <a href="/case-study-1" class="project-link">View Case Study</a>
-                </article>
-                
-                <article class="project-card">
-                    <h3><a href="/case-study-2">Mobile Fitness App Interface</a></h3>
-                    <div class="project-meta">Product Design • 2024</div>
-                    <div class="project-description">
-                        <p>Designing an intuitive mobile interface for a fitness tracking app. Through user research and iterative testing, created a seamless experience that increased user engagement by 60%.</p>
-                    </div>
-                    <a href="/case-study-2" class="project-link">View Case Study</a>
-                </article>
-            </div>
+            <article class="project-card">
+                <h3><a href="/case-study-2">Mobile App Interface</a></h3>
+                <div class="project-meta">Product Design • 2024</div>
+                <div class="project-description">
+                    <p>Designing an intuitive mobile interface for a fitness tracking app. The project involved user research, prototyping, and testing to create a seamless experience for health-conscious users.</p>
+                </div>
+                <a href="/case-study-2" class="read-more">Read case study →</a>
+            </article>
         </section>
-        
-        <!-- About Section -->
-        <section class="about" id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm a UX/UI designer with 5+ years of experience creating digital products that users love. 
-                I believe great design happens at the intersection of user needs, business goals, and 
-                technical possibilities.
-            </p>
-            <p>
-                When I'm not designing, you can find me exploring new coffee shops, reading about psychology, 
-                or planning my next travel adventure.
-            </p>
-            
-            <div class="contact-links">
-                <a href="mailto:hello@anniesommer.com">Email</a>
-                <a href="https://linkedin.com/in/anniesommer">LinkedIn</a>
-                <a href="https://dribbble.com/anniesommer">Dribbble</a>
-                <a href="/resume.pdf">Resume</a>
-            </div>
-        </section>
-        
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© 2024 Annie Sommer. Designed with care and plenty of coffee.</p>
-        </footer>
-    </div>
+    </main>
+    
+    <footer>
+        <p>© 2024 Annie Sommer. Thoughtfully designed with care.</p>
+    </footer>
 </body>
 </html>
-<
