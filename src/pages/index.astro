@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annie Sommer - UX/UI Designer</title>
+    <title>E-commerce Redesign - Annie Sommer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <style>
         :root {
@@ -13,64 +13,125 @@
             --text-color: #34495e;
             --light-gray: #f8f9fa;
             --border-color: #e9ecef;
+            --sidebar-width: 240px; 
         }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.7;
             color: var(--text-color);
-            max-width: 42rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            gap: 3rem;
+            padding: 2rem;
         }
         
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
+        .back-link {
+            color: #7f8c8d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .back-link:hover {
             color: var(--primary-color);
         }
         
-        header p {
-            font-size: 1.1rem;
-            color: #7f8c8d;
+        .toc {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .toc h3 {
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
             margin: 0;
         }
         
-        nav {
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+            background-color: rgba(44, 62, 80, 0.1);
+            padding-left: 0.5rem;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .project-header {
             margin-bottom: 3rem;
         }
         
-        nav ul {
-            list-style: none;
-            padding: 0;
+        .project-header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        
+        .project-meta {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            margin: 0;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            flex-wrap: wrap;
         }
         
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
-        
-        nav a:hover {
+        .project-summary {
+            font-size: 1.1rem;
+            color: #5d6d7e;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
             background-color: var(--light-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
         }
-        
-        .projects {
+
+                .projects {
             display: grid;
             gap: 2rem;
         }
@@ -119,40 +180,161 @@
             text-decoration: underline;
         }
         
-        footer {
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            scroll-margin-top: 2rem;
+        }
+        
+        .content-section h3 {
+            color: var(--text-color);
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            scroll-margin-top: 2rem;
+        }
+        
+        .highlight-box {
+            background-color: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+        
+        .image-placeholder {
+            background-color: var(--light-gray);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            color: #7f8c8d;
+            margin: 2rem 0;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
             margin-top: 4rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 0.9rem;
         }
         
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav ul {
+            .container {
                 flex-direction: column;
-                align-items: center;
-                gap: 1rem;
+                padding: 1rem;
+                gap: 2rem;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+                order: 2;
+            }
+            
+            .main-content {
+                order: 1;
+            }
+            
+            .project-header h1 {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Annie Sommer</h1>
-        <p>UX/UI Designer & Creative Problem Solver</p>
-    </header>
-    
-    <nav>
+    <div class="container">
+        <!-- Sidebar with TOC -->
+        <!--<aside class="sidebar">
+            <a href="/" class="back-link">← Back to portfolio</a>
+            
+            <nav class="toc">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#challenge">The Challenge</a></li>
+                    <li><a href="#research">Research & Discovery</a></li>
+                    <li><a href="#solution">Design Solution</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#lessons">Lessons Learned</a></li>
+                </ul>
+            </nav>
+        </aside> -->
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="project-header">
+                     <h1>Annie Sommer</h1>
+                      <p>UX/UI Designer & Creative Problem Solver</p>
+             </header>
+                <div class="project-meta">
+                    <span><strong>Role:</strong> UX/UI Designer</span>
+                    <span><strong>Duration:</strong> 3 months</span>
+                    <span><strong>Year:</strong> 2024</span>
+                </div>
+        <nav>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/case-study-1">Case Study 1</a></li>
             <li><a href="/case-study-2">Case Study 2</a></li>
         </ul>
     </nav>
-    
-    <main>
-        <section class="projects">
+                <div class="project-summary">
+                    A comprehensive redesign of an e-commerce platform focused on improving user experience, increasing conversion rates, and modernizing the visual design. This project involved extensive user research, prototyping, and iterative testing.
+                </div>
+            </header>
+         <section class="projects">
             <article class="project-card">
                 <h3><a href="/case-study-1">E-commerce Platform Redesign</a></h3>
                 <div class="project-meta">UX/UI Design • 2024</div>
@@ -170,11 +352,12 @@
                 </div>
                 <a href="/case-study-2" class="read-more">Read case study →</a>
             </article>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2024 Annie Sommer. Thoughtfully designed with care.</p>
-    </footer>
+        </section>   
+            <nav class="navigation">
+                <a href="/" class="nav-link">← Back to portfolio</a>
+                <a href="/case-study-2" class="nav-link">Next project →</a>
+            </nav>
+        </main>
+    </div>
 </body>
 </html>
