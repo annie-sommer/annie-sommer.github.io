@@ -1,0 +1,233 @@
+---
+// src/pages/index.astro
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Designing for users in the living room</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				background: #fafafa;
+				color: #333;
+				line-height: 1.6;
+			}
+
+			.container {
+				max-width: 1000px;
+				margin: 0 auto;
+				padding: 2rem;
+			}
+
+			.hero-section {
+				text-align: center;
+				margin-bottom: 4rem;
+			}
+
+			.hero-image {
+				width: 100%;
+				max-width: 800px;
+				height: 300px;
+				object-fit: cover;
+				border-radius: 12px;
+				margin-bottom: 3rem;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+				background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.1rem;
+				color: #666;
+			}
+
+			.main-heading {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 3.5rem;
+				font-weight: 400;
+				font-style: italic;
+				color: #1a1a1a;
+				margin-bottom: 1rem;
+				line-height: 1.2;
+			}
+
+			.subheading {
+				font-size: 1.2rem;
+				color: #666;
+				font-weight: 400;
+				margin-bottom: 3rem;
+			}
+
+			.content-grid {
+				display: grid;
+				grid-template-columns: 1fr 300px;
+				gap: 4rem;
+				margin-top: 3rem;
+			}
+
+			.executive-summary {
+				background: white;
+				padding: 2.5rem;
+				border-radius: 12px;
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+			}
+
+			.executive-summary h2 {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 1.8rem;
+				font-weight: 600;
+				margin-bottom: 1.5rem;
+				color: #1a1a1a;
+			}
+
+			.executive-summary p {
+				margin-bottom: 1.5rem;
+				color: #444;
+				font-size: 1rem;
+			}
+
+			.case-studies-sidebar {
+				background: white;
+				padding: 2rem;
+				border-radius: 12px;
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+				height: fit-content;
+			}
+
+			.case-study-item {
+				margin-bottom: 2rem;
+				padding-bottom: 2rem;
+				border-bottom: 1px solid #eee;
+			}
+
+			.case-study-item:last-child {
+				border-bottom: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+
+			.case-study-title {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 1.1rem;
+				font-weight: 600;
+				color: #1a1a1a;
+				margin-bottom: 0.5rem;
+			}
+
+			.case-study-description {
+				font-size: 0.9rem;
+				color: #666;
+				margin-bottom: 0.8rem;
+				line-height: 1.5;
+			}
+
+			.page-number {
+				font-size: 0.85rem;
+				color: #999;
+				text-align: right;
+			}
+
+			.case-study-link {
+				display: block;
+				text-decoration: none;
+				color: inherit;
+				transition: all 0.3s ease;
+				border-radius: 8px;
+				padding: 1rem;
+				margin: -1rem;
+			}
+
+			.case-study-link:hover {
+				background: #f8f9fa;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			}
+
+			@media (max-width: 768px) {
+				.container {
+					padding: 1rem;
+				}
+
+				.main-heading {
+					font-size: 2.5rem;
+				}
+
+				.content-grid {
+					grid-template-columns: 1fr;
+					gap: 2rem;
+				}
+
+				.case-studies-sidebar {
+					order: -1;
+				}
+
+				.hero-image {
+					height: 200px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="hero-section">
+				<div class="hero-image">
+					[Hero Image Placeholder - Replace with your architectural/design image]
+				</div>
+				
+				<h1 class="main-heading">Designing for users in the living room</h1>
+				<p class="subheading">3 Case Studies by Annie Sommer, prepared for Amazon</p>
+			</div>
+
+			<div class="content-grid">
+				<div class="executive-summary">
+					<h2>Executive summary</h2>
+					
+					<p>I pulled these projects when I saw a call for considering the "Living Room Experience" because they are all ambient, multimodal experiences for customers interacting with technology at home.</p>
+					
+					<p>The Robot vacuum, home-scent diffuser, and fiber router all connect to your phone and/or Alexa, enabling you to have a seamless, futuristic utopian experience if I did my job right.</p>
+					
+					<p>Each product featured required a different approach to customer-centric design. They showcase my ability to lead design in ambiguity, build considered cross-platform ecosystems, and create elegant designs that are scalable. In the case of the Voice projects, I pioneered Voice design on my team and was able to upskill my fellow designers on the process. On Frontier, I contributed billing flows to a design system that became a reusable foundation across clients.</p>
+					
+					<p><em>I completed these projects while working at 2 agencies, Vectorform (Now Launch by NTT Data) and Sapient-Razorfish</em></p>
+				</div>
+
+				<div class="case-studies-sidebar">
+					<a href="/shark-ninja" class="case-study-link">
+						<div class="case-study-item">
+							<div class="case-study-title">Shark/Ninja Robot Vacuum</div>
+							<div class="case-study-description">Voice design for the Alexa and Google Home skills for the Shark robot vacuum (roomba).</div>
+							<div class="page-number">page 4</div>
+						</div>
+					</a>
+
+					<a href="/prolitec-aera" class="case-study-link">
+						<div class="case-study-item">
+							<div class="case-study-title">Prolitec Aera</div>
+							<div class="case-study-description">Home scenting UX for mood + environment</div>
+							<div class="page-number">page 13</div>
+						</div>
+					</a>
+
+					<a href="/frontier-communications" class="case-study-link">
+						<div class="case-study-item">
+							<div class="case-study-title">Frontier Communications</div>
+							<div class="case-study-description">Managing fiber internet from mobile</div>
+							<div class="page-number">page 23</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
