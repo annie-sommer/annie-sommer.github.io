@@ -1,0 +1,443 @@
+---
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontier Mobile App - Annie Sommer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --text-color: #34495e;
+            --light-gray: #f8f9fa;
+            --border-color: #e9ecef;
+            --sidebar-width: 240px; 
+            --base-font-size: 14pt;
+        }
+        
+        body {
+            font-family: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            font-size: var(--base-font-size);
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 3rem;
+            padding: 2rem;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .back-link {
+            color: #7f8c8d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            display: block;
+            font-family: 'Karla', sans-serif;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .toc {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .toc h3 {
+            margin: 0 0 1rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            display: block;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-family: 'Karla', sans-serif;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+            background-color: rgba(44, 62, 80, 0.1);
+            padding-left: 0.5rem;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .project-header {
+            margin-bottom: 3rem;
+        }
+        
+        .project-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            flex-wrap: wrap;
+            font-family: 'Karla', sans-serif;
+        }
+        
+        .project-summary {
+            font-size: 1.1rem;
+            color: #5d6d7e;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            font-family: 'Karla', sans-serif;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            scroll-margin-top: 2rem;
+        }
+        
+        .content-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            font-weight: 500;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            scroll-margin-top: 2rem;
+            font-size: 1.3rem;
+        }
+        
+        .content-section p {
+            font-family: 'Karla', sans-serif;
+            font-size: var(--base-font-size);
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section ul, .content-section ol {
+            font-family: 'Karla', sans-serif;
+            font-size: var(--base-font-size);
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background-color: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-box h3 {
+            margin-top: 0;
+        }
+        
+        .highlight-box p, .highlight-box ul {
+            font-family: 'Karla', sans-serif;
+            font-size: var(--base-font-size);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-family: 'Karla', sans-serif;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+        
+        .image-placeholder {
+            background-color: var(--light-gray);
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            color: #7f8c8d;
+            margin: 2rem 0;
+            font-family: 'Karla', sans-serif;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Karla', sans-serif;
+        }
+        
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 2rem;
+            }
+            
+            .sidebar {
+                width: 100%;
+                position: static;
+                order: 2;
+            }
+            
+            .main-content {
+                order: 1;
+            }
+            
+            .project-header h1 {
+                font-size: 2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar with TOC -->
+        <aside class="sidebar">
+            <a href="/livingroom" class="back-link">← Back to living room</a>
+            
+            <nav class="toc">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#problem">User Problem</a></li>
+                    <li><a href="#strategy">Strategy</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#design">Design</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#insights">Insights</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="project-header">
+                <h1>Frontier Mobile App</h1>
+                
+                <div class="project-meta">
+                    <span><strong>Role:</strong> UX/UI Designer & UX Strategist</span>
+                    <span><strong>Client:</strong> Frontier Communications</span>
+                    <span><strong>Agency:</strong> Razorfish</span>
+                </div>
+                
+                <div class="project-summary">
+                    Redesigning Frontier's mobile app to create a single, intuitive interface for managing internet, TV, phone, billing, and device troubleshooting. The project focused on transforming the fragmented customer experience into a streamlined, high-tech solution that improved user satisfaction and app store ratings.
+                </div>
+            </header>
+            
+            <section class="content-section" id="problem">
+                <h2>User Problem</h2>
+                <p>Frontier customers relied on multiple touch-points to manage service like internet, TV, phone, billing, and device troubleshooting.</p>
+                
+                <p>They needed a single, intuitive mobile interface that allowed them to:</p>
+                
+                <ul>
+                    <li>Pay bills and manage autopay with minimal steps</li>
+                    <li>Monitor and troubleshoot home Wi-Fi and connected devices</li>
+                    <li>Access and upgrade streaming and TV subscriptions</li>
+                    <li>Give customers credibility that their solution was high-tech</li>
+                </ul>
+                
+                <div class="image-placeholder">
+                    [Fragmented Customer Journey Overview]
+                </div>
+            </section>
+            
+            <section class="content-section" id="strategy">
+                <h2>Strategy</h2>
+                
+                <h3>My Role</h3>
+                <p>I was a UX/UI designer and UX strategist. I would create screens, write decks, write annotations, and contribute to the Frontier design system. All using Figma.</p>
+                
+                <h3>My Contribution</h3>
+                <p>I drove research conclusions in the audit and IA phase that pushed towards heavy support and tracking features.</p>
+                
+                <h3>Research</h3>
+                <p>We researched by auditing the existing frontier app and pointing out any existing issues. Support was by far the most confusing part of the app, with network errors rendering in code. I made specific note of this and drove for more support scope.</p>
+                
+                <h3>Mapping</h3>
+                <p>Based on the first audit and business recommendations we built a map for all pages in the app.</p>
+            </section>
+            
+            <section class="content-section" id="solution">
+                <h2>Solution</h2>
+                <p>The redesigned app prioritized billing and support features based on user research findings. We created a comprehensive mobile experience that balanced Frontier's desire to showcase their technology capabilities with users' primary needs for billing transparency and reliable support.</p>
+                
+                <p>Key solution elements included streamlined billing workflows, enhanced support tracking features, and a cohesive design system that made the app feel modern and trustworthy.</p>
+                
+                <div class="image-placeholder">
+                    [App Solution Overview]
+                </div>
+            </section>
+            
+            <section class="content-section" id="design">
+                <h2>Design</h2>
+                
+                <h3>Wireframes</h3>
+                <p>Billing was given visual priority because it's both a major pain and touchpoint in the app.</p>
+                
+                <div class="image-placeholder">
+                    [Billing Wireframes and User Flow]
+                </div>
+                
+                <h3>Design System</h3>
+                <p>These workflows became part of a billing prototyping design system that was internal to Razorfish. I contributed the flows as derived from two projects, Frontier and Bread Financial.</p>
+                
+                <h3>UX/UI Feature Pitch</h3>
+                <p>The most high-value features in the app were by far the opportunities for more robust support tracking. These features represented a UX/UI hybrid engagement where I put together high-fidelity wires to pitch the functionality.</p>
+                
+                <div class="image-placeholder">
+                    [High-Fidelity Support Feature Designs]
+                </div>
+            </section>
+            
+            <section class="content-section" id="results">
+                <h2>Results</h2>
+                <p>The redesigned Frontier app achieved significant improvements in user satisfaction and market performance, with lasting impact on the user experience.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">98k</span>
+                        <span class="stat-label">Ratings on App Store</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">+1★</span>
+                        <span class="stat-label">Rating improvement (3.5 → 4.6 YOY)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">UI/UX retained and still in use</span>
+                    </div>
+                </div>
+                <!-- comment -->
+                <h3>Impact</h3>
+                <p><strong>Widespread Adoption:</strong> Frontier's app is widely downloaded and used and retains the same UI/UX design system we created.</p>
+                
+                <p><strong>Sustained Improvement:</strong> The app store rating improved from 3.5 to 4.6 year over year, demonstrating significant user satisfaction gains.</p>
+                
+                <p><strong>Long-term Success:</strong> The design system and user experience patterns we established continue to be used by Frontier, showing the durability and effectiveness of our design approach.</p>
+            </section>
+            
+            <section class="content-section" id="insights">
+                <h2>Insights</h2>
+                
+                <div class="highlight-box">
+                    <h3>Utmost Empathy for Users</h3>
+                    <p>One of the most challenging user mindsets is that of the disgruntled ISP customer. Having a rigorous design system that makes shipping features fast is key, as is simplifying and clarifying as much as possible. Avoiding patronizing UX/UI, or overly prescriptive or condescending UX patterns was crucial for user acceptance.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Users Over Dashboards</h3>
+                    <p>Frontier wanted to showcase their incredibly fast speeds, but users wanted to see billing and support transparency. Injecting optimism about new technology through dark mode branding and sleek UX makes balancing both needs possible without disrupting UX.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Research-Driven Feature Prioritization</h3>
+                    <p>The audit phase revealed that support features were the most problematic area, with technical errors appearing as code to users. This research insight drove the strategic decision to heavily invest in support and tracking capabilities, which became the app's most valuable features.</p>
+                </div>
+            </section>
+            
+            <nav class="navigation">
+                <a href="/livingroom" class="nav-link">← Back to living room</a>
+                <a href="/sharkninja" class="nav-link">Next project →</a>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>
