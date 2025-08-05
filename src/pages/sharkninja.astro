@@ -103,18 +103,18 @@
             padding-left: 0.5rem;
         }
 
- /* Active TOC link styling */
-.toc a.active {
-    color: var(--primary-color);
-    background-color: rgba(44, 62, 80, 0.15);
-    padding-left: 0.75rem;
-    font-weight: 500;
-    border-left: 3px solid var(--primary-color);
-}
-/* Smooth transition for TOC links */
-.toc a {
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
+        /* Active TOC link styling */
+        .toc a.active {
+            color: var(--primary-color);
+            background-color: rgba(44, 62, 80, 0.15);
+            padding-left: 0.75rem;
+            font-weight: 500;
+            border-left: 3px solid var(--primary-color);
+        }
+        /* Smooth transition for TOC links */
+        .toc a {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
         }
         
         /* Main Content */
@@ -253,6 +253,105 @@
             margin: 2rem 0;
             font-family: 'Karla', sans-serif;
         }
+
+        /* Thumbnail styling */
+        .thumbnail {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .thumbnail:hover img {
+            filter: brightness(1.1);
+        }
+
+        /* Fullscreen modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-caption {
+            color: white;
+            font-family: 'Karla', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 1.5rem;
+            max-width: 600px;
+            line-height: 1.6;
+            padding: 0 1rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: 300;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         
         .navigation {
             display: flex;
@@ -299,6 +398,26 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            /* Mobile responsive for modal */
+            .modal-content {
+                max-width: 95vw;
+                max-height: 70vh;
+            }
+            
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
+                width: 35px;
+                height: 35px;
+                font-size: 1.5rem;
+            }
+            
+            .modal-caption {
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -343,7 +462,9 @@
                 <p>The designers on my team and my agency needed to develop best-practices for voice skill design.</p>
                             
                 <div class="image-placeholder">
-                 <img src="/img/Shark/dog.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="thumbnail" data-caption="User testing revealed that people form emotional connections with their robot vacuums, treating them like pets with names and personalities.">
+                        <img src="/img/Shark/dog.png" alt="Shark/Ninja Robot Vacuum - User with pet and robot vacuum">
+                    </div>
                 </div>
             </section>
             
@@ -367,12 +488,14 @@
                                 
                 <p>I designed the skill to go into strategic recoveries so that users could ensure they would be able to use whatever name they wanted for their robot vacuum. (Now, with improved Alexa inference capabilities, these strategies would no longer be applicable.)</p>
                 
-                <p>Voice UX roadblocks like the “Alexa ask” skill format make voice control cumbersome. We aimed to design the Shark voice interaction to feel like a responsive, ambient companion — aligning with user expectations of a 'living' product while working within Alexa/Home's invocation limitations.</p>
+                <p>Voice UX roadblocks like the "Alexa ask" skill format make voice control cumbersome. We aimed to design the Shark voice interaction to feel like a responsive, ambient companion — aligning with user expectations of a 'living' product while working within Alexa/Home's invocation limitations.</p>
                 
                 <p>We designed and developed the mobile UI/UX at the same time, and I worked closely with the mobile team to align copy and provisioning processes.</p>
 
                 <div class="image-placeholder">
-                 <img src="/img/Shark/guy.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="thumbnail" data-caption="Users needed to feel like their robot vacuum was responsive and alive, despite the limitations of voice assistant invocation patterns.">
+                        <img src="/img/Shark/guy.png" alt="User interacting with Shark robot vacuum via voice command">
+                    </div>
                 </div>
             </section>
             <section class="content-section" id="design">
@@ -381,18 +504,23 @@
                 <p>Breaking down the voice user interface a diagram that mapped Alexa speaking instances, User Speaking instances (intents), Error Handling, and conditions was our main design deliverable.</p>
                 
                 <p>A second VUI diagram was created for Google Home.</p>
-                 <div class="image-placeholder">
-                 <img src="/img/Shark/sharkvui.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
+                <div class="image-placeholder">
+                    <div class="thumbnail" data-caption="Voice User Interface diagram mapping out all conversation flows, intents, and error handling for the Shark robot vacuum Alexa skill.">
+                        <img src="/img/Shark/sharkvui.png" alt="Shark robot vacuum VUI flow diagram">
+                    </div>
                 </div>
                 
                 <p>I created a VUI diagram design system and template and built the VUI diagrams for our voice skills at Vectorform. I would also write the coordinating copy documents for what the Alexa should actually say.</p>          
                 <h3>VUI Design System and Documentation</h3>
                 <p>I went deep on the voice design process and created a handbook of strategies for VUI design for my agency to leverage in other projects for the unique user challenges of voice design. I also created a design system to use across all VUIs.</p>
                 
-                 <div class="image-placeholder">
-                 <img src="/img/Shark/CogStrat1.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
-                 <img src="/img/Shark/CogStrat2.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
-
+                <div class="image-placeholder">
+                    <div class="thumbnail" data-caption="VUI design system documentation showing cognitive strategies and design patterns for voice user interfaces.">
+                        <img src="/img/Shark/CogStrat1.png" alt="VUI cognitive strategies documentation page 1">
+                    </div>
+                    <div class="thumbnail" data-caption="Advanced cognitive strategies for VUI design, including error recovery and user intent disambiguation techniques.">
+                        <img src="/img/Shark/CogStrat2.png" alt="VUI cognitive strategies documentation page 2">
+                    </div>
                 </div>
             </section>
             
@@ -449,6 +577,13 @@
         </main>
     </div>
 
+    <!-- Modal for fullscreen images -->
+    <div id="imageModal" class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Get all sections and TOC links
@@ -485,19 +620,74 @@
         });
         
         // Optional: Smooth scrolling for TOC links
-       tocLinks.forEach(link => {
-            link.addEventListener('click', function(e) { e.preventDefault();
-             const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href')!.substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) { 
+                e.preventDefault();
+                const targetId = e.currentTarget.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Image modal functionality
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+
+        // Add click listeners to all thumbnails
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                console.log('Thumbnail clicked'); // Debug log
+                const img = this.querySelector('img');
+                const caption = this.getAttribute('data-caption');
+                
+                if (modal && modalImg && modalCaption) {
+                    modal.style.display = 'flex';
+                    modal.classList.add('active');
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt;
+                    modalCaption.textContent = caption || img.alt;
+                    
+                    // Prevent body scroll when modal is open
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal function
+        function closeModal() {
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Make closeModal available globally
+        window.closeModal = closeModal;
+
+        // Close modal when clicking the background
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
             });
         }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
     });
-});
-    });
- </script>
+    </script>
 </body>
 </html>
