@@ -100,6 +100,19 @@
             background-color: rgba(44, 62, 80, 0.1);
             padding-left: 0.5rem;
         }
+        /* Active TOC link styling */
+.toc a.active {
+    color: var(--primary-color);
+    background-color: rgba(44, 62, 80, 0.15);
+    padding-left: 0.75rem;
+    font-weight: 500;
+    border-left: 3px solid var(--primary-color);
+}
+/* Smooth transition for TOC links */
+.toc a {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+        }
         
         /* Main Content */
         .main-content {
@@ -442,4 +455,55 @@
         </main>
     </div>
 </body>
-</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all sections and TOC links
+        const sections = document.querySelectorAll('.content-section[id]');
+        const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+        
+        // Options for the Intersection Observer
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px', // Adjust these values to control when highlighting occurs
+            threshold: 0
+        };
+        
+        // Create intersection observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const tocLink = document.querySelector(`.toc a[href="#${id}"]`);
+                
+                if (entry.isIntersecting) {
+                    // Remove active class from all TOC links
+                    tocLinks.forEach(link => link.classList.remove('active'));
+                    // Add active class to current TOC link
+                    if (tocLink) {
+                        tocLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Optional: Smooth scrolling for TOC links
+       tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) { e.preventDefault();
+             const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href')!.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+  });
+  </script>
+  </html>
+

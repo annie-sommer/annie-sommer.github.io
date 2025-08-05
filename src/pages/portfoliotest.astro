@@ -288,7 +288,7 @@
 
         // Get all unique tags
         const allTags = [...new Set(caseStudies.flatMap(study => study.tags))];
-        let activeTags = [];
+        let activeTags: string[] = [];
 
         // Create filter tags
         function createFilterTags() {
@@ -369,5 +369,5 @@
             createCaseStudyCards();
         });
     </script>
-</body>
+    </body>
 </html>
