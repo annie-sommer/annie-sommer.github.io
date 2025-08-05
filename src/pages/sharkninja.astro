@@ -115,8 +115,7 @@
 .toc a {
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
-}
-</style>
+        }
         
         /* Main Content */
         .main-content {
@@ -273,7 +272,7 @@
         .nav-link:hover {
             text-decoration: underline;
         }
-        
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .container {
@@ -486,20 +485,18 @@
         });
         
         // Optional: Smooth scrolling for TOC links
-        tocLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+       tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) { e.preventDefault();
+             const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href')!.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
+        }
+    });
+});
     });
     </script>
 </body>
