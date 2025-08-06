@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shark/Ninja Robot Vacuum - Annie Sommer</title>
+    <title>Prolitec Aera - Annie Sommer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -16,11 +16,11 @@
             --light-gray: #f8f9fa;
             --border-color: #e9ecef;
             --sidebar-width: 240px; 
-            --base-font-size: 14px;
+            --base-font-size: 14pt;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.7;
             color: var(--text-color);
             margin: 0;
@@ -57,10 +57,9 @@
         .back-link:hover {
             color: var(--primary-color);
         }
-
-        
         
         .toc {
+            background-color: var(--light-gray);
             border-radius: 8px;
             padding: 1.5rem;
         }
@@ -101,26 +100,24 @@
             background-color: rgba(44, 62, 80, 0.1);
             padding-left: 0.5rem;
         }
-
         /* Active TOC link styling */
-        .toc a.active {
-            color: var(--primary-color);
-            background-color: rgba(44, 62, 80, 0.15);
-            padding-left: 0.75rem;
-            font-weight: 500;
-            border-left: 3px solid var(--primary-color);
-        }
-        /* Smooth transition for TOC links */
-        .toc a {
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
+.toc a.active {
+    color: var(--primary-color);
+    background-color: rgba(44, 62, 80, 0.15);
+    padding-left: 0.75rem;
+    font-weight: 500;
+    border-left: 3px solid var(--primary-color);
+}
+/* Smooth transition for TOC links */
+.toc a {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
         }
         
         /* Main Content */
         .main-content {
             flex: 1;
             min-width: 0;
-            max-width: 760px;
         }
         
         .project-header {
@@ -128,7 +125,7 @@
         }
         
         .project-header h1 {
-            font-family: 'Newsreader', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 400;
             margin-bottom: 1rem;
@@ -143,15 +140,18 @@
             font-size: 0.9rem;
             color: #7f8c8d;
             flex-wrap: wrap;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
         }
         
         .project-summary {
-            font-size: .9rem;
+            font-size: 1.1rem;
             color: #5d6d7e;
             margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--light-gray);
             border-radius: 8px;
-            font-family: 'Inter', sans-serif;
+            border-left: 4px solid var(--primary-color);
+            font-family: 'Karla', sans-serif;
         }
         
         .content-section {
@@ -159,7 +159,7 @@
         }
         
         .content-section h2 {
-            font-family: 'Newsreader', serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--primary-color);
             font-weight: 500;
             margin-bottom: 1.5rem;
@@ -168,7 +168,7 @@
         }
         
         .content-section h3 {
-            font-family: 'Newsreader', serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--text-color);
             font-weight: 500;
             margin-top: 2rem;
@@ -178,15 +178,15 @@
         }
         
         .content-section p {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
             font-size: var(--base-font-size);
             margin-bottom: 1.5rem;
         }
         
         .content-section ul, .content-section ol {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
             font-size: var(--base-font-size);
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
         }
         
         .content-section li {
@@ -206,7 +206,7 @@
         }
         
         .highlight-box p, .highlight-box ul {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
             font-size: var(--base-font-size);
         }
         
@@ -226,7 +226,7 @@
         }
         
         .stat-number {
-            font-family: 'Newsreader', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
             font-weight: 300;
             color: var(--primary-color);
@@ -234,117 +234,21 @@
         }
         
         .stat-label {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
             font-size: 0.9rem;
             color: #7f8c8d;
             margin-top: 0.5rem;
         }
         
         .image-placeholder {
+            background-color: var(--light-gray);
+            border: 2px dashed var(--border-color);
             border-radius: 8px;
+            padding: 3rem;
             text-align: center;
             color: #7f8c8d;
             margin: 2rem 0;
             font-family: 'Karla', sans-serif;
-        }
-
-        /* Thumbnail styling */
-        .thumbnail {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-
-        .thumbnail:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .thumbnail img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .thumbnail:hover img {
-            filter: brightness(1.1);
-        }
-
-        /* Fullscreen modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            max-width: 90vw;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-caption {
-            color: white;
-            font-family: 'Karla', sans-serif;
-            font-size: 1.1rem;
-            text-align: center;
-            margin-top: 1.5rem;
-            max-width: 600px;
-            line-height: 1.6;
-            padding: 0 1rem;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            color: white;
-            font-size: 2rem;
-            font-weight: 300;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            border: none;
-            font-family: 'Newsreader', serif;
-        }
-
-        .modal-close:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         
         .navigation {
@@ -365,7 +269,7 @@
         .nav-link:hover {
             text-decoration: underline;
         }
-
+        
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .container {
@@ -391,25 +295,6 @@
             .project-meta {
                 flex-direction: column;
                 gap: 0.5rem;
-            }
-
-            /* Mobile responsive for modal */
-            .modal-content {
-                max-width: 95vw;
-                max-height: 70vh;
-            }
-            
-            .modal-close {
-                top: 1rem;
-                right: 1rem;
-                width: 35px;
-                height: 35px;
-                font-size: 1.5rem;
-            }
-            
-            .modal-caption {
-                font-size: 1rem;
-                margin-top: 1rem;
             }
         }
     </style>
@@ -578,74 +463,19 @@
         });
         
         // Optional: Smooth scrolling for TOC links
-        tocLinks.forEach(link => {
-            link.addEventListener('click', function(e) { 
-                e.preventDefault();
-                const targetId = e.currentTarget.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Image modal functionality
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const modalCaption = document.getElementById('modalCaption');
-
-        // Add click listeners to all thumbnails
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function() {
-                console.log('Thumbnail clicked'); // Debug log
-                const img = this.querySelector('img');
-                const caption = this.getAttribute('data-caption');
-                
-                if (modal && modalImg && modalCaption) {
-                    modal.style.display = 'flex';
-                    modal.classList.add('active');
-                    modalImg.src = img.src;
-                    modalImg.alt = img.alt;
-                    modalCaption.textContent = caption || img.alt;
-                    
-                    // Prevent body scroll when modal is open
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-        // Close modal function
-        function closeModal() {
-            if (modal) {
-                modal.style.display = 'none';
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Make closeModal available globally
-        window.closeModal = closeModal;
-
-        // Close modal when clicking the background
-        if (modal) {
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeModal();
-                }
+       tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) { e.preventDefault();
+             const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href')!.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
         }
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
     });
-    </script>
+ });
+});
+</script> 
 </body>
 </html>
