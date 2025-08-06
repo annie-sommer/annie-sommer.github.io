@@ -1,7 +1,6 @@
 ---
 // src/pages/index.astro
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -154,6 +153,104 @@
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 			}
 
+			/* New Tab System Styles */
+			.tabs-section {
+				margin: 4rem 0;
+			}
+
+			.tabs-header {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 2rem;
+				font-weight: 600;
+				color: #1a1a1a;
+				margin-bottom: 2rem;
+				text-align: left;
+			}
+
+			.tab-buttons {
+				display: flex;
+				gap: 0.5rem;
+				margin-bottom: 3rem;
+				flex-wrap: wrap;
+			}
+
+			.tab-button {
+				background: #e8e9ea;
+				border: none;
+				padding: 0.75rem 1.5rem;
+				border-radius: 25px;
+				font-family: 'Montserrat', sans-serif;
+				font-size: 0.9rem;
+				font-weight: 500;
+				color: #666;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			.tab-button:hover {
+				background: #d0d1d2;
+			}
+
+			.tab-button.active {
+				background: #333;
+				color: white;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+			}
+
+			.case-card {
+				background: white;
+				border-radius: 12px;
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+				overflow: hidden;
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+
+			.case-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+			}
+
+			.card-image {
+				width: 100%;
+				height: 180px;
+				background: #d0d0d0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 0.9rem;
+				color: #888;
+			}
+
+			.card-content {
+				padding: 1.5rem;
+			}
+
+			.card-title {
+				font-family: 'Montserrat', sans-serif;
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: #1a1a1a;
+				margin-bottom: 0.5rem;
+			}
+
+			.card-description {
+				font-size: 0.95rem;
+				color: #666;
+				line-height: 1.5;
+			}
+
+			.card.hidden {
+				display: none;
+			}
+
 			@media (max-width: 768px) {
 				.container {
 					padding: 1rem;
@@ -174,6 +271,14 @@
 
 				.hero-image {
 					height: 200px;
+				}
+
+				.cards-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.tab-buttons {
+					justify-content: center;
 				}
 			}
 		</style>
@@ -228,6 +333,108 @@
 					</a>
 				</div>
 			</div>
+
+			<!-- New Tab System Section -->
+			<div class="tabs-section">
+				<h2 class="tabs-header">CASE STUDIES</h2>
+				
+				<div class="tab-buttons">
+					<button class="tab-button active" data-category="all">All</button>
+					<button class="tab-button" data-category="living-room">Living Room</button>
+					<button class="tab-button" data-category="iot">IoT</button>
+					<button class="tab-button" data-category="mobile">Mobile</button>
+					<button class="tab-button" data-category="finance">Finance</button>
+					<button class="tab-button" data-category="saas">SaaS</button>
+				</div>
+
+				<div class="cards-grid">
+					<div class="case-card" data-categories="saas">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Tracking Plans and Data Catalog</div>
+							<div class="card-description">Building a large and game-changing feature from 0 to 1</div>
+						</div>
+					</div>
+
+					<div class="case-card" data-categories="saas">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Rudderstack UI</div>
+							<div class="card-description">Making a developer-first and backend software into a front-end beauty</div>
+						</div>
+					</div>
+
+					<div class="case-card" data-categories="living-room iot">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Shark/Ninja</div>
+							<div class="card-description">Developing a voice design process for an emerging tech agency and a hit IoT product</div>
+						</div>
+					</div>
+
+					<div class="case-card" data-categories="living-room iot">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Prolitec</div>
+							<div class="card-description">Voice design for a first of it's kind IoT home scenting device</div>
+						</div>
+					</div>
+
+					<div class="case-card" data-categories="mobile">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Frontier Communications</div>
+							<div class="card-description">Mobile app UX/UI for a major new player in the ISP game</div>
+						</div>
+					</div>
+
+					<div class="case-card" data-categories="finance mobile">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Bread Financial</div>
+							<div class="card-description">Mobile app UX/UI for a fresh, personal, tech-first and friendly credit card</div>
+						</div>
+					</div>
+
+					<div class="case-card" data-categories="finance">
+						<div class="card-image">[Project Image]</div>
+						<div class="card-content">
+							<div class="card-title">Capital Group</div>
+							<div class="card-description">Internal iPad app for a 4T investment management firm</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
+		<script>
+			// Tab functionality
+			const tabButtons = document.querySelectorAll('.tab-button');
+			const caseCards = document.querySelectorAll('.case-card');
+
+			tabButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					// Remove active class from all buttons
+					tabButtons.forEach(btn => btn.classList.remove('active'));
+					
+					// Add active class to clicked button
+					button.classList.add('active');
+					
+					// Get selected category
+					const selectedCategory = button.dataset.category;
+					
+					// Filter cards
+					caseCards.forEach(card => {
+						const cardCategories = card.dataset.categories;
+						
+						if (selectedCategory === 'all' || cardCategories.includes(selectedCategory)) {
+							card.style.display = 'block';
+						} else {
+							card.style.display = 'none';
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
