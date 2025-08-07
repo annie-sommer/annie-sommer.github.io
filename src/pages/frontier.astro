@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-    <style>
+   <style>
         :root {
             --primary-color: #2c3e50;
             --text-color: #34495e;
@@ -93,7 +93,7 @@
             display: block;
             border-radius: 4px;
             transition: all 0.2s ease;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
         }
         
         .toc a:hover {
@@ -245,7 +245,7 @@
             text-align: center;
             color: #7f8c8d;
             margin: 2rem 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
         }
 
         /* Thumbnail styling */
@@ -308,7 +308,7 @@
 
         .modal-caption {
             color: white;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
             font-size: 1.1rem;
             text-align: center;
             margin-top: 1.5rem;
@@ -359,7 +359,7 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Karla', sans-serif;
         }
         
         .nav-link:hover {
@@ -461,7 +461,7 @@
                     <li>Give customers credibility that their solution was high-tech</li>
                 </ul>
                 
-                <div class="image-placeholder">
+             <div class="image-placeholder">
                     <div class="thumbnail" data-caption="Users needed to feel like their robot vacuum was responsive and alive, despite the limitations of voice assistant invocation patterns.">
                         <img src="/img/frontier/frontier.png" alt="User interacting with Frontier mobile app via voice command">
                     </div>
@@ -579,8 +579,14 @@
             </nav>
         </main>
     </div>
-</body>
-<script>
+<!-- Modal for fullscreen images -->
+    <div id="imageModal" class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Get all sections and TOC links
         const sections = document.querySelectorAll('.content-section[id]');
@@ -685,5 +691,6 @@
         });
     });
     </script>
-  </html>
+</body>
+</html>
 
