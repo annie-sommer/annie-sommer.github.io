@@ -10,287 +10,161 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
    		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-		<style>
+	
+	<style>
+	body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #fafafa;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: var(--base-font-size);
+}
 
-			 :root {
-            --primary-color: #2c3e50;
-            --text-color: #34495e;
-            --light-gray: #f8f9fa;
-            --border-color: #e9ecef;
-            --sidebar-width: 240px; 
-            --base-font-size: 14px;
-        }
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
+.main-heading {
+    font-family: 'Newsreader', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
 
-			body {
-				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-				background: #fafafa;
-				color: #333;
-				line-height: 1.6;
-			}
+.subheading {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
 
-			.container {
-				max-width: 1000px;
-				margin: 0 auto;
-				padding: 2rem;
-			}
+.executive-summary h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
 
-			.hero-section {
-				text-align: center;
-				margin-bottom: 4rem;
-			}
+.executive-summary p {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-size: var(--base-font-size);
+}
 
-			.hero-image {
-				width: 100%;
-				max-width: 800px;
-				height: 300px;
-				object-fit: cover;
-				border-radius: 12px;
-				margin-bottom: 3rem;
-				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-				background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 1.1rem;
-				color: #666;
-			}
+.case-study-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
 
-			.main-heading {
-				font-family: 'Newsreader', serif;
-				font-size: 3.5rem;
-				font-weight: 400;
-				font-style: italic;
-				color: #1a1a1a;
-				margin-bottom: 1rem;
-				line-height: 1.2;
-			}
+.case-study-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
 
-			.subheading {
-				font-size: 1.2rem;
-				color: #666;
-				font-weight: 400;
-				margin-bottom: 3rem;
-			}
+.tabs-header {
+    font-family: 'Newsreader', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
 
-			.content-grid {
-				display: grid;
-				grid-template-columns: 1fr 300px;
-				gap: 4rem;
-				margin-top: 3rem;
-			}
+.tab-button {
+    background: #e8e9ea;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-			.executive-summary {
-				background: white;
-				padding: 2.5rem;
-				border-radius: 12px;
-				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-			}
+.tab-button:hover {
+    background: #d0d1d2;
+}
 
-			.executive-summary h2 {
-				font-family: 'Inter', sans-serif;
-				font-size: 1.8rem;
-				font-weight: 600;
-				margin-bottom: 1.5rem;
-				color: #1a1a1a;
-			}
+.tab-button.active {
+    background: var(--primary-color);
+    color: white;
+}
 
-			.executive-summary p {
-				margin-bottom: 1.5rem;
-				color: #444;
-				font-size: 1rem;
-			}
+.card-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
 
-			.case-studies-sidebar {
-				background: white;
-				padding: 2rem;
-				border-radius: 12px;
-				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-				height: fit-content;
-			}
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
 
-			.case-study-item {
-				margin-bottom: 2rem;
-				padding-bottom: 2rem;
-				border-bottom: 1px solid #eee;
-			}
+.page-number {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    text-align: right;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 
-			.case-study-item:last-child {
-				border-bottom: none;
-				margin-bottom: 0;
-				padding-bottom: 0;
-			}
+.tabs-section {
+    margin: 3rem 0;
+}
 
-			.case-study-title {
-				font-family: 'Newsreader', serif;
-				font-size: 1.1rem;
-				font-weight: 600;
-				color: #1a1a1a;
-				margin-bottom: 0.5rem;
-			}
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 0;
+}
 
-			.case-study-description {
-				font-size: 0.9rem;
-				color: #666;
-				margin-bottom: 0.8rem;
-				line-height: 1.5;
-			}
+.card-content {
+    padding: 1.5rem;
+}
 
-			.page-number {
-				font-size: 0.85rem;
-				color: #999;
-				text-align: right;
-			}
+.case-study-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
 
-			.case-study-link {
-				display: block;
-				text-decoration: none;
-				color: inherit;
-				transition: all 0.3s ease;
-				border-radius: 8px;
-				padding: 1rem;
-				margin: -1rem;
-			}
+.case-studies-sidebar {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
 
-			.case-study-link:hover {
-				background: #f8f9fa;
-				transform: translateY(-2px);
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-			}
-
-			/* New Tab System Styles */
-			.tabs-section {
-				margin: 4rem 0;
-			}
-
-			.tabs-header {
-				font-family: 'Inter', sans-serif;
-				font-size: 2rem;
-				font-weight: 600;
-				color: #1a1a1a;
-				margin-bottom: 2rem;
-				text-align: left;
-			}
-
-			.tab-buttons {
-				display: flex;
-				gap: 0.5rem;
-				margin-bottom: 3rem;
-				flex-wrap: wrap;
-			}
-
-			.tab-button {
-				background: #e8e9ea;
-				border: none;
-				padding: 0.75rem 1.5rem;
-				border-radius: 25px;
-				font-family: 'Inter', sans-serif;
-				font-size: 0.9rem;
-				font-weight: 500;
-				color: #666;
-				cursor: pointer;
-				transition: all 0.3s ease;
-				text-transform: uppercase;
-				letter-spacing: 0.5px;
-			}
-
-			.tab-button:hover {
-				background: #d0d1d2;
-			}
-
-			.tab-button.active {
-				background: #333;
-				color: white;
-			}
-
-			.cards-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 2rem;
-			}
-
-			.case-card {
-				background: white;
-				border-radius: 12px;
-				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-				overflow: hidden;
-				transition: all 0.3s ease;
-				cursor: pointer;
-			}
-
-			.case-card:hover {
-				transform: translateY(-4px);
-				box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-			}
-
-			.card-image {
-				width: 100%;
-				height: 180px;
-				background: #d0d0d0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 0.9rem;
-				color: #888;
-			}
-
-			.card-content {
-				padding: 1.5rem;
-			}
-
-			.card-title {
-				font-family: 'Newsreader', serif;
-				font-size: 1.2rem;
-				font-weight: 600;
-				color: #1a1a1a;
-				margin-bottom: 0.5rem;
-			}
-
-			.card-description {
-				font-size: 0.95rem;
-				color: #666;
-				line-height: 1.5;
-			}
-
-			.card.hidden {
-				display: none;
-			}
-
-			@media (max-width: 768px) {
-				.container {
-					padding: 1rem;
-				}
-
-				.main-heading {
-					font-size: 2.5rem;
-				}
-
-				.content-grid {
-					grid-template-columns: 1fr;
-					gap: 2rem;
-				}
-
-				.case-studies-sidebar {
-					order: -1;
-				}
-
-				.hero-image {
-					height: 200px;
-				}
-
-				.cards-grid {
-					grid-template-columns: 1fr;
-				}
-
-				.tab-buttons {
-					justify-content: center;
-				}
-			}
-		</style>
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    .tabs-section {
+        margin: 2rem 0;
+    }
+}
+</style>
 	</head>
 	<body>
 		<div class="container">
