@@ -281,63 +281,109 @@
                     justify-content: center;
                 }
             }
+/*new styles*/
+    :root {
+    --primary-color: #2c3e50;
+    --text-color: #34495e;
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+    --base-font-size: 14px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #fafafa;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: var(--base-font-size);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.main-heading {
+    font-family: 'Newsreader', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.page-summary {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.tabs-section {
+    margin: 3rem 0;
+}
+
+.tabs-header {
+    font-family: 'Newsreader', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.tab-button {
+    background: #e8e9ea;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tab-button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.card-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
         </style>
 	</head>
 	<body>
 		<div class="container">
-			<!-- <div class="hero-section">
-				<div class="hero-image">
-					[Hero Image Placeholder - Replace with your architectural/design image]
-				</div> 
-				
-				<h1 class="main-heading">Designing for users in the living room</h1>
-				<p class="subheading">3 Case Studies by Annie Sommer, prepared for Amazon</p>
+			<div class="page-header">
+   			 <h1 class="main-heading">Annie Sommer</h1>
+   			 <p class="page-summary">Product designer specializing in voice interfaces, IoT experiences, and cross-platform ecosystems. I create elegant solutions that bridge user expectations with emerging technologies.</p>
 			</div>
-
-			<div class="content-grid">
-				<div class="executive-summary">
-					<h2>Executive summary</h2>
-					
-					<p>I pulled these projects when I saw a call for considering the "Living Room Experience" because they are all ambient, multimodal experiences for customers interacting with technology at home.</p>
-					
-					<p>The Robot vacuum, home-scent diffuser, and fiber router all connect to your phone and/or Alexa, enabling you to have a seamless, futuristic utopian experience if I did my job right.</p>
-					
-					<p>Each product featured required a different approach to customer-centric design. They showcase my ability to lead design in ambiguity, build considered cross-platform ecosystems, and create elegant designs that are scalable. In the case of the Voice projects, I pioneered Voice design on my team and was able to upskill my fellow designers on the process. On Frontier, I contributed billing flows to a design system that became a reusable foundation across clients.</p>
-					
-					<p><em>I completed these projects while working at 2 agencies, Vectorform (Now Launch by NTT Data) and Sapient-Razorfish</em></p>
-				</div>
-
-				<div class="case-studies-sidebar">
-					<a href="/sharkninja" class="case-study-link">
-						<div class="case-study-item">
-							<div class="case-study-title">Shark/Ninja Robot Vacuum</div>
-							<div class="case-study-description">Voice design for the Alexa and Google Home skills for the Shark robot vacuum (roomba).</div>
-							<div class="page-number">page 4</div>
-						</div>
-					</a>
-
-					<a href="/prolitec" class="case-study-link">
-						<div class="case-study-item">
-							<div class="case-study-title">Prolitec Aera</div>
-							<div class="case-study-description">Home scenting UX for mood and environment</div>
-							<div class="page-number">page 13</div>
-						</div>
-					</a>
-
-					<a href="/Frontier" class="case-study-link">
-						<div class="case-study-item">
-							<div class="case-study-title">Frontier Communications</div>
-							<div class="case-study-description">Managing fiber internet from mobile</div>
-							<div class="page-number">page 23</div>
-						</div>
-					</a>
-				</div>
-			</div>-->
-
-			<!-- New Tab System Section -->
 			<div class="tabs-section">
 				<h2 class="tabs-header">Case Studies</h2>
-				
 				<div class="tab-buttons">
 					<button class="tab-button active" data-category="all">All</button>
 					<button class="tab-button" data-category="living-room">Living Room</button>
