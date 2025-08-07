@@ -9,12 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-    <style>
+  <style>
         :root {
-            --primary-color: #2c3e50;
-            --text-color: #34495e;
-            --light-gray: #f8f9fa;
-            --border-color: #e9ecef;
+   			 --primary-color: #334EAC; /* Royal */
+   			 --secondary-color: #081F5C; /* Midnight */
+   			 --accent-color: #7096D1; /* China */
+  			--text-color: #334EAC; /* Royal for main text */
+  			--text-secondary: #7096D1; /* China for secondary text */
+   			 --text-muted: #BAD6EB; /* Sky for muted text */
+   			 --light-gray: #F7F2EB; /* Moon */
+   			 --border-color: #EDF1F6; /* Porcelain */
+   			 --background-accent: #D0E3FF; /* Dawn */
             --sidebar-width: 240px; 
             --base-font-size: 14px;
         }
@@ -226,7 +231,7 @@
         }
         
         .stat-number {
-            font-family: 'Newsreader', serif;
+            font-family: 'Inter', sans-serif;
             font-size: 2rem;
             font-weight: 300;
             color: var(--primary-color);
@@ -537,6 +542,12 @@
                 <a href="/frontier" class="nav-link">Next project →</a>
             </nav>
         </main>
+    </div>
+<!-- Modal for fullscreen images -->
+    <div id="imageModal" class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
     </div>
 
 <script>
