@@ -1,363 +1,612 @@
 ---
+// src/pages/index.astro
 ---
-
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Redesign - Annie Sommer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Designing for users in the living room</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --text-color: #34495e;
-            --light-gray: #f8f9fa;
-            --border-color: #e9ecef;
-            --sidebar-width: 240px; 
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            :root {
+             --primary-color: #334EAC; /* Royal */
+             --secondary-color: #081F5C; /* Midnight */
+             --accent-color: #7096D1; /* China */
+              --text-color: #334EAC; /* Royal for main text */
+              --text-secondary: #7096D1; /* China for secondary text */
+             --text-muted: #BAD6EB; /* Sky for muted text */
+             --light-gray: #F7F2EB; /* Moon */
+             --border-color: #EDF1F6; /* Porcelain */
+             --background-accent: #D0E3FF; /* Dawn */
+            --base-font-size: 14px;
+            }
+
+
+            body {
+             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+             background: #fafafa;
+             color: var(--text-color);
             line-height: 1.7;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 3rem;
-            padding: 2rem;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            width: var(--sidebar-width);
-            flex-shrink: 0;
-            position: sticky;
-            top: 2rem;
-            height: fit-content;
-        }
-        
-        .back-link {
-            color: #7f8c8d;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
-        
-        .back-link:hover {
-            color: var(--primary-color);
-        }
-        
-        .toc {
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        
-        .toc h3 {
-            margin: 0 0 1rem 0;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .toc ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .toc li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .toc a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.25rem 0;
-            display: block;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-        
-        .toc a:hover {
-            color: var(--primary-color);
-            background-color: rgba(44, 62, 80, 0.1);
-            padding-left: 0.5rem;
-        }
-        
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .project-header {
-            margin-bottom: 3rem;
-        }
-        
-        .project-header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            line-height: 1.2;
-        }
-        
-        .project-meta {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            flex-wrap: wrap;
-        }
-        
-        .project-summary {
-            font-size: 1.1rem;
-            color: #5d6d7e;
-            margin-bottom: 3rem;
-            padding: 1.5rem;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
+            font-size: var(--base-font-size);
         }
 
-                .projects {
-            display: grid;
-            gap: 2rem;
-        }
-        
-        .project-card {
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .project-card h3 {
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        .project-card h3 a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .project-meta {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 1rem;
-        }
-        
-        .project-description {
-            margin-bottom: 1.5rem;
-        }
-        
-        .read-more {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        .read-more:hover {
-            text-decoration: underline;
-        }
-        
-        
-        .content-section {
-            margin-bottom: 3rem;
-        }
-        
-        .content-section h2 {
-            color: var(--primary-color);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            scroll-margin-top: 2rem;
-        }
-        
-        .content-section h3 {
-            color: var(--text-color);
-            font-weight: 500;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            scroll-margin-top: 2rem;
-        }
-        
-        .highlight-box {
-            background-color: var(--light-gray);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 300;
-            color: var(--primary-color);
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-top: 0.5rem;
-        }
-        
-        .image-placeholder {
-            background-color: var(--light-gray);
-            border: 2px dashed var(--border-color);
-            border-radius: 8px;
-            padding: 3rem;
-            text-align: center;
-            color: #7f8c8d;
-            margin: 2rem 0;
-        }
-        
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .nav-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
             .container {
-                flex-direction: column;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .hero-section {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+
+            .hero-image {
+                width: 100%;
+                max-width: 800px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 12px;
+                margin-bottom: 3rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.1rem;
+                color: #666;
+            }
+
+            .main-heading {
+                font-family: 'Newsreader', serif;
+                font-size: 3.5rem;
+                font-weight: 400;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+
+            .subheading {
+                font-size: 1.2rem;
+                color: #666;
+                font-weight: 400;
+                margin-bottom: 3rem;
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: 1fr 300px;
+                gap: 4rem;
+                margin-top: 3rem;
+            }
+
+           .page-summary {
+                font-size: 1.1rem;
+                color: var(--text-secondary);
+                margin-bottom: 0;
+                max-width: 740px;
+                 margin-left: auto;
+                 margin-right: auto;
+                 font-family: 'Inter', sans-serif;
+            }
+
+            .executive-summary h2 {
+                font-family: 'Inter', sans-serif;
+                font-size: 1.8rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+                color: #1a1a1a;
+            }
+
+            .executive-summary p {
+                margin-bottom: 1.5rem;
+                color: #444;
+                font-size: 1rem;
+            }
+
+            .case-studies-sidebar {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+                height: fit-content;
+            }
+
+            .case-study-item {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .case-study-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .case-study-title {
+                font-family: 'Newsreader', serif;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #1a1a1a;
+                margin-bottom: 0.5rem;
+            }
+
+            .case-study-description {
+                font-size: 0.9rem;
+                color: #666;
+                margin-bottom: 0.8rem;
+                line-height: 1.5;
+            }
+
+            .page-number {
+                font-size: 0.85rem;
+                color: #999;
+                text-align: right;
+            }
+
+            .case-study-link {
+                display: block;
+                text-decoration: none;
+                color: inherit;
+                transition: all 0.3s ease;
+                border-radius: 8px;
                 padding: 1rem;
+                margin: -1rem;
+            }
+
+            .case-study-link:hover {
+                background: #f8f9fa;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            /* New Tab System Styles */
+            .tabs-section {
+                margin: 4rem 0;
+            }
+
+            .tabs-header {
+                font-family: 'Newsreader', serif;
+                font-size: 2rem;
+                font-weight: 500;
+                color: var(--primary-color);
+                margin-bottom: 2rem;
+                 text-align: left;
+                }
+            .tab-buttons {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 3rem;
+                flex-wrap: wrap;
+            }
+
+            .tab-button {
+                background: var(--light-gray);
+                border: none;
+                padding: 0.75rem 1.5rem;
+                border-radius: 25px;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                }
+
+
+           
+            .tab-button:hover {
+            background: var(--background-accent);
+            color: var(--primary-color);
+            }   
+
+            .tab-button.active {
+            background: var(--secondary-color);
+            color: white;
+            }
+
+
+            .cards-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 2rem;
             }
-            
-            .sidebar {
-                width: 100%;
-                position: static;
-                order: 2;
+
+    .case-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(51, 78, 172, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(51, 78, 172, 0.15);
+    border-color: var(--accent-color);
+}
+
+.card-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--background-accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+            .card-content {
+                padding: 1.5rem;
             }
-            
-            .main-content {
-                order: 1;
+
+            .card-title {
+                font-family: 'Newsreader', serif;
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #1a1a1a;
+                margin-bottom: 0.5rem;
             }
-            
-            .project-header h1 {
-                font-size: 2rem;
+
+            .card-description {
+                font-size: 0.95rem;
+                color: #666;
+                line-height: 1.5;
             }
-            
-            .project-meta {
-                flex-direction: column;
-                gap: 0.5rem;
+
+            .card.hidden {
+                display: none;
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Sidebar with TOC -->
-        <!--<aside class="sidebar">
-            <a href="/" class="back-link">← Back to portfolio</a>
-            
-            <nav class="toc">
-                <h3>Contents</h3>
-                <ul>
-                    <li><a href="#challenge">The Challenge</a></li>
-                    <li><a href="#research">Research & Discovery</a></li>
-                    <li><a href="#solution">Design Solution</a></li>
-                    <li><a href="#results">Results</a></li>
-                    <li><a href="#lessons">Lessons Learned</a></li>
-                </ul>
-            </nav>
-        </aside> -->
-        
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="project-header">
-                     <h1>Annie Sommer</h1>
-                      <p>portfolio under construction </p>
-             </header> <!-- 
-                <div class="project-meta">
-                    <span><strong>Role:</strong> UX/UI Designer</span>
-                    <span><strong>Duration:</strong> 3 months</span>
-                    <span><strong>Year:</strong> 2024</span>
+
+            @media (max-width: 768px) {
+                .container {
+                    padding: 1rem;
+                }
+
+                .main-heading {
+                    font-size: 2.5rem;
+                }
+
+                .content-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+
+                .case-studies-sidebar {
+                    order: -1;
+                }
+
+                .hero-image {
+                    height: 200px;
+                }
+
+                .cards-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .tab-buttons {
+                    justify-content: center;
+                }
+            }
+ .executive-summary-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+
+    .executive-title {
+        font-size: 1.8rem;
+    }
+
+    .illustration-placeholder {
+        max-width: 250px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+
+/*new styles*/
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #fafafa;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: var(--base-font-size);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/*Summary*/
+.executive-summary-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin: 4rem 0;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.executive-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.executive-title {
+    font-family: 'Newsreader', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.executive-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.executive-content p:last-child {
+    margin-bottom: 0;
+}
+
+.executive-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-placeholder {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--background-accent) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    box-shadow: 0 4px 16px rgba(51, 78, 172, 0.08);
+}
+
+.main-heading {
+    font-family: 'Newsreader', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+
+.tabs-section {
+    margin: 3rem 0;
+}
+
+.tabs-header {
+    font-family: 'Newsreader', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.tab-button {
+    background: #e8e9ea;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tab-button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.card-title {
+    font-family: 'Newsreader', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--background-accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.case-card:hover .card-image img {
+    transform: scale(1.05);
+}
+ </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+             <h1 class="main-heading">Annie Sommer</h1>
+             <p class="page-summary">Product design generalist (11 years) with deep spikes in iOT, systems design, data/infra, machine learning, and consumer mobile UX/UI. Fun person.</p>
+            </div>
+            <div class="tabs-section">
+                <h2 class="tabs-header">Case Studies</h2>
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-category="all">All</button>
+                    <button class="tab-button" data-category="living-room">Living Room</button>
+                    <button class="tab-button" data-category="iot">IoT</button>
+                    <button class="tab-button" data-category="mobile">Mobile</button>
+                    <button class="tab-button" data-category="finance">Finance</button>
+                    <button class="tab-button" data-category="saas">SaaS</button>
                 </div>
-        <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/case-study-1">Case Study 1</a></li>
-            <li><a href="/case-study-2">Case Study 2</a></li>
-        </ul>
-    </nav>
-                <div class="project-summary">
-                    A comprehensive redesign of an e-commerce platform focused on improving user experience, increasing conversion rates, and modernizing the visual design. This project involved extensive user research, prototyping, and iterative testing.
+
+                <div class="cards-grid">
+                    <div class="case-card" data-categories="saas">
+                        <div class="card-image">Coming Soon</div>
+                        <div class="card-content">
+                            <div class="card-title">Tracking Plans and Data Catalog</div>
+                            <div class="card-description">Building a large and game-changing feature from 0 to 1</div>
+                        </div>
+                    </div>
+
+                    <div class="case-card" data-categories="saas">
+                        <div class="card-image">Coming Soon</div>
+                        <div class="card-content">
+                            <div class="card-title">Rudderstack UI</div>
+                            <div class="card-description">Making a developer-first and backend software into a front-end beauty</div>
+                        </div>
+                    </div>
+
+                    <div class="case-card" data-categories="living-room iot">
+                        <a href="/sharkninja" class="case-study-link">
+                        <div class="card-image">
+                            <img src="/img/editorial/dognew.jpg" alt="u6116968316-httpss-mj-runw-Z-w-3-DF-SE-clean-white-background-l-6f028d06-4c64-483a-8002-ff963e581801" border="0"></div>
+                        <div class="card-content">
+                            <div class="card-title">Shark/Ninja</div>
+                            <div class="card-description">Developing a voice design process for an emerging tech agency and a hit IoT product</div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="case-card" data-categories="living-room iot">
+                        <a href="/prolitec" class="case-study-link">
+                        <div class="card-image"><img src="/img/editorial/prolitecedit.jpg" border="0"></div>
+                        <div class="card-content">
+                            <div class="card-title">Prolitec Aera</div>
+                            <div class="card-description">Voice design for a first of it's kind IoT home scenting device</div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="case-card" data-categories="living-room mobile">
+                        <a href="/frontier" class="case-study-link">
+                        <div class="card-image">
+                        <img src="https://i.ibb.co/BHwSPw9x/u6116968316-httpss-mj-runw-Z-w-3-DF-SE-clean-white-background-l-6f028d06-4c64-483a-8002-ff963e581801.png" alt="u6116968316-httpss-mj-runw-Z-w-3-DF-SE-clean-white-background-l-6f028d06-4c64-483a-8002-ff963e581801" border="0"></div>
+                        <div class="card-content">
+                            <div class="card-title">Frontier Communications</div>
+                            <div class="card-description">Mobile app UX/UI for a major new player in the ISP game</div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="case-card" data-categories="finance mobile">
+                        <div class="card-image">Coming Soon</div>
+                        <div class="card-content">
+                            <div class="card-title">Bread Financial</div>
+                            <div class="card-description">Mobile app UX/UI for a fresh, personal, tech-first and friendly credit card</div>
+                        </div>
+                    </div>
+
+                    <div class="case-card" data-categories="finance">
+                        <div class="card-image">Coming Soon</div>
+                        <div class="card-content">
+                            <div class="card-title">Capital Group</div>
+                            <div class="card-description">Internal iPad app for a 4T investment management firm</div>
+                        </div>
+                    </div>
                 </div>
-            </header>
-         <section class="projects">
-            <article class="project-card">
-                <h3><a href="/case-study-1">E-commerce Platform Redesign</a></h3>
-                <div class="project-meta">UX/UI Design • 2024</div>
-                <div class="project-description">
-                    <p>A comprehensive redesign of an e-commerce platform focused on improving user experience and conversion rates. Through research and iterative design, we achieved a 40% increase in user engagement.</p>
-                </div>
-                <a href="/case-study-1" class="read-more">Read case study →</a>
-            </article>
-            
-            <article class="project-card">
-                <h3><a href="/case-study-2">Mobile Fitness App Interface</a></h3>
-                <div class="project-meta">Product Design • 2024</div>
-                <div class="project-description">
-                    <p>Designing an intuitive mobile interface for a fitness tracking app. The project involved user research, prototyping, and testing to create a seamless experience for health-conscious users.</p>
-                </div>
-                <a href="/case-study-2" class="read-more">Read case study →</a>
-            </article>
-        </section>   
-            <nav class="navigation">
-                <a href="/" class="nav-link">← Back to  portfolio</a>
-                <a href="/case-study-2" class="nav-link">Next project →</a>
-            </nav> 
-        </main>
-    </div> --->
-</body>
+            </div>
+        </div>
+
+        <script>
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const caseCards = document.querySelectorAll('.case-card');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Get selected category
+                    const selectedCategory = button.dataset.category;
+                    
+                    // Filter cards
+                    caseCards.forEach(card => {
+                        const cardCategories = card.dataset.categories;
+                        
+                        if (selectedCategory === 'all' || cardCategories.includes(selectedCategory)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
 </html>
