@@ -492,12 +492,87 @@ body {
 .case-card:hover .card-image img {
     transform: scale(1.05);
 }
+
+/* header logo*/
+.name-logo {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.name-logo:hover {
+    transform: translateY(-2px);
+    color: var(--accent-color);
+}
+
+.name-logo::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px;
+    left: 50%;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+
+.name-logo:hover::after {
+    width: 100%;
+}
+
+/* Letter animation on hover */
+.name-logo .letter {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.name-logo:hover .letter {
+    animation: letterBounce 0.6s ease-in-out;
+}
+
+.name-logo:hover .letter:nth-child(1) { animation-delay: 0s; }
+.name-logo:hover .letter:nth-child(2) { animation-delay: 0.05s; }
+.name-logo:hover .letter:nth-child(3) { animation-delay: 0.1s; }
+.name-logo:hover .letter:nth-child(4) { animation-delay: 0.15s; }
+.name-logo:hover .letter:nth-child(5) { animation-delay: 0.2s; }
+.name-logo:hover .letter:nth-child(6) { animation-delay: 0.25s; }
+.name-logo:hover .letter:nth-child(7) { animation-delay: 0.3s; }
+.name-logo:hover .letter:nth-child(8) { animation-delay: 0.35s; }
+.name-logo:hover .letter:nth-child(9) { animation-delay: 0.4s; }
+.name-logo:hover .letter:nth-child(10) { animation-delay: 0.45s; }
+.name-logo:hover .letter:nth-child(11) { animation-delay: 0.5s; }
+.name-logo:hover .letter:nth-child(12) { animation-delay: 0.55s; }
+
+@keyframes letterBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Subtle glow effect on hover */
+.name-logo:hover {
+    text-shadow: 0 0 20px rgba(112, 150, 209, 0.3);
+}
+
+/* Focus state for accessibility */
+.name-logo:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
  </style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="page-header">
-   			 <h1 class="main-heading">Annie Sommer</h1>
+   			    <h1 class="main-heading">
+       			 <a href="/index.html" class="name-logo">Annie Sommer</a>
+   				 </h1>
    			 <p class="page-summary">Product design generalist (11 years) with deep spikes in iOT, systems design, data/infra, machine learning, and consumer mobile UX/UI. Fun person.</p>
 			</div>
 
@@ -619,6 +694,24 @@ body {
 					});
 				});
 			});
+	
+		// logo animation	
+	document.addEventListener('DOMContentLoaded', function() {
+    const nameLogoElement = document.querySelector('.name-logo');
+    if (nameLogoElement) {
+        const text = nameLogoElement.textContent;
+        nameLogoElement.innerHTML = '';
+        
+        for (let i = 0; i < text.length; i++) {
+            const letter = text[i];
+            const span = document.createElement('span');
+            span.className = 'letter';
+            span.textContent = letter === ' ' ? '\u00A0' : letter; // Use non-breaking space
+            nameLogoElement.appendChild(span);
+        }
+    }
+});
+			
 		</script>
 	</body>
 </html>
