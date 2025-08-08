@@ -51,12 +51,12 @@
         }
         
         .back-link {
-            color: #7f8c8d;
+            color: #7096D1
             text-decoration: none;
             font-size: 0.9rem;
             margin-bottom: 2rem;
             display: block;
-            font-family: 'Karla', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         .back-link:hover {
@@ -98,19 +98,19 @@
             display: block;
             border-radius: 4px;
             transition: all 0.2s ease;
-            font-family: 'Karla', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         .toc a:hover {
             color: var(--primary-color);
-            background-color: rgba(44, 62, 80, 0.1);
+            background-color: rgba(247, 242, 235, 0.25);
             padding-left: 0.5rem;
         }
 
         /* Active TOC link styling */
         .toc a.active {
             color: var(--primary-color);
-            background-color: rgba(44, 62, 80, 0.15);
+            background-color:	rgba(247, 242, 235, 0.45);
             padding-left: 0.75rem;
             font-weight: 500;
             border-left: 3px solid var(--primary-color);
@@ -146,14 +146,14 @@
             gap: 2rem;
             margin-bottom: 2rem;
             font-size: 0.9rem;
-            color: #7f8c8d;
+            color: #7096D1;
             flex-wrap: wrap;
             font-family: 'Inter', sans-serif;
         }
         
         .project-summary {
             font-size: .9rem;
-            color: #5d6d7e;
+            color: var(--text-secondary);
             margin-bottom: 3rem;
             border-radius: 8px;
             font-family: 'Inter', sans-serif;
@@ -241,16 +241,16 @@
         .stat-label {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
-            color: #7f8c8d;
+            color: #7096D1;
             margin-top: 0.5rem;
         }
         
         .image-placeholder {
             border-radius: 8px;
             text-align: center;
-            color: #7f8c8d;
+            color: #7096D1;
             margin: 2rem 0;
-            font-family: 'Karla', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         /* Thumbnail styling */
@@ -313,7 +313,7 @@
 
         .modal-caption {
             color: white;
-            font-family: 'Karla', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
             text-align: center;
             margin-top: 1.5rem;
@@ -364,7 +364,7 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
-            font-family: 'Karla', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         .nav-link:hover {
@@ -457,9 +457,10 @@
                 <p>Users needed a convenient way to control their electric scent diffuser without getting up or opening their phone.</p>
                 
                 <p>Prolitec was launching its first consumer-facing IoT product and needed a voice and app interface that conveyed reliability, elegance, and technical confidence.</p>
-                
-                <div class="image-placeholder">
-                    <img src="/img/Prolitec/pinkdiffuser1.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
+                 <div class="image-placeholder">
+                    <div class="thumbnail" data-caption="User testing revealed that people form emotional connections with their robot vacuums, treating them like pets with names and personalities.">
+                        <img src="/img/Prolitec/pinkdiffuser1.png" alt="Shark/Ninja Robot Vacuum - User with pet and robot vacuum">
+                    </div>
                 </div>
             </section>
             
@@ -500,7 +501,9 @@
                 <p>The user interface of the mobile UI matched the design of the device with a large dial at the center. Scent-inspired colors and patterns personalized the UI and were driven home in the VUI through tone and sound effects.</p>
                 
                 <div class="image-placeholder">
-                    <img src="/img/Prolitec/appUI1.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="thumbnail" data-caption="User testing revealed that people form emotional connections with their robot vacuums, treating them like pets with names and personalities.">
+                        <img src="/img/Prolitec/appUI1.png" alt="Shark/Ninja Robot Vacuum - User with pet and robot vacuum">
+                    </div>
                 </div>
             </section>
             
@@ -520,8 +523,11 @@
                 <p>We navigated this by keeping Alexa's queries short and to the point, and offering strategic paths and queries to different functionalities in the VUI. I designed default names into the skill for Aera, which we did not do on Shark, because it's less natural to name a diffuser than a roaming robot.</p>
                 
                 <div class="image-placeholder">
-                    <img src="/img/Prolitec/prolitecVUI.png" alt="Shark/Ninja Robot Vacuum Hero Image" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="thumbnail" data-caption="User testing revealed that people form emotional connections with their robot vacuums, treating them like pets with names and personalities.">
+                        <img src="/img/Prolitec/prolitecVUI.png" alt="Shark/Ninja Robot Vacuum - User with pet and robot vacuum">
+                    </div>
                 </div>
+                
             </section>
             <section class="content-section" id="insights">
                 <h2>Insights</h2>
@@ -543,6 +549,7 @@
             </nav>
         </main>
     </div>
+
 <!-- Modal for fullscreen images -->
     <div id="imageModal" class="modal">
         <button class="modal-close" onclick="closeModal()">&times;</button>
