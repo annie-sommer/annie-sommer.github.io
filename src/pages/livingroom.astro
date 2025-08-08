@@ -508,23 +508,6 @@ body {
     color: var(--accent-color);
 }
 
-.name-logo::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -8px;
-    left: 50%;
-    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateX(-50%);
-    border-radius: 1px;
-}
-
-.name-logo:hover::after {
-    width: 100%;
-}
-
 /* Letter animation on hover */
 .name-logo .letter {
     display: inline-block;
@@ -556,13 +539,6 @@ body {
 /* Subtle glow effect on hover */
 .name-logo:hover {
     text-shadow: 0 0 20px rgba(112, 150, 209, 0.3);
-}
-
-/* Focus state for accessibility */
-.name-logo:focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 4px;
-    border-radius: 4px;
 }
 
  </style>
@@ -696,7 +672,8 @@ body {
 			});
 	
 		// logo animation	
-	document.addEventListener('DOMContentLoaded', function() {
+	// Wrap each letter in a span for individual animation
+document.addEventListener('DOMContentLoaded', function() {
     const nameLogoElement = document.querySelector('.name-logo');
     if (nameLogoElement) {
         const text = nameLogoElement.textContent;
